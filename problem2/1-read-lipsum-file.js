@@ -4,6 +4,7 @@ const readlipsumFile = async () => {
   try {
     const data = await readFilePromise("../lipsum.txt");
     console.log(data);
+    return data;
   } catch (error) {
     console.error(error);
   }
