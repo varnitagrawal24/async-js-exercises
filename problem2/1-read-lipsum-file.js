@@ -1,8 +1,12 @@
 const readFilePromise = require("../fs-promise/read-file-promise");
 
 const readlipsumFile = async () => {
-  const data = await readFilePromise("../lipsum.txt");
-  console.log(data);
+  try {
+    const data = await readFilePromise("../lipsum.txt");
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 module.exports = readlipsumFile;
