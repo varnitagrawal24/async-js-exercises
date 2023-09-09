@@ -1,8 +1,9 @@
 const fs = require("fs");
 
-const appendFilePromise = (filePath) => {
+const appendFilePromise = (filePath, content) => {
   return new Promise((resolve, reject) => {
-    fs.readFile(filePath, "utf8", (err, data) => {
+    content = "\n" + content;
+    fs.appendFile(filePath, content, (err, data) => {
       if (err) {
         reject(err);
       } else {
